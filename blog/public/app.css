@@ -1,0 +1,13 @@
+body{
+    background: beige;
+    color: black;
+    margin: auto;
+    font-family: sans-serif;
+    max-width: 600px; 
+}
+
+article + article{
+
+    margin-top: 60px;
+    border-top: 1px solid grey;
+}
