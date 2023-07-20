@@ -11,7 +11,7 @@
 <body>
     <h1>Welcome to the blade</h1>
     <article>
-    <h2><a href="/post/my-first-post"> my first post</a></h2>
+    <h2><a href="/posts/my-first-post"> my first post</a></h2>
         <p>
             alot of dummy worrds
             alot of dummy worrds
@@ -26,7 +26,7 @@
     </article>
 
     <article>
-       <h2><a href="/post/my-second-post">my second post</a></h2>
+       <h2><a href="/posts/my-second-post">my second post</a></h2>
         <p>
             alot of dummy worrds
             alot of dummy worrds
@@ -41,7 +41,7 @@
     </article>
 
     <article>
-        <h2><a href="/post/my-third-post">my third post</a></h2>
+        <h2><a href="/posts/my-third-post">my third post</a></h2>
         <p>
             alot of dummy worrds
             alot of dummy worrds
