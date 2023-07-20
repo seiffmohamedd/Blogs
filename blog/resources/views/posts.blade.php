@@ -6,53 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>My Blog</title>
     <link rel="stylesheet" href="/app.css"></link>
-    {{-- <script src="/app.js"></script> --}}
 </head>
 <body>
     <h1>Welcome to the blade</h1>
+
+    <?php foreach ($posts as $post) : ?>
     <article>
-    <h2><a href="/posts/my-first-post"> my first post</a></h2>
-        <p>
-            alot of dummy worrds
-            alot of dummy worrds
-            alot of dummy worrds
-            alot of dummy worrds
-            alot of dummy worrds
-            alot of dummy worrds
-            alot of dummy worrds
-            alot of dummy worrds
+        <h1>
+            <a href="/posts/<?= $post->slug; ?>">
+                <?= $post->title; ?>
+            </a>
+        </h1>
 
-        </p>
+        <div>
+            <?= $post->excerpt; ?>
+        </div>
     </article>
-
-    <article>
-       <h2><a href="/posts/my-second-post">my second post</a></h2>
-        <p>
-            alot of dummy worrds
-            alot of dummy worrds
-            alot of dummy worrds
-            alot of dummy worrds
-            alot of dummy worrds
-            alot of dummy worrds
-            alot of dummy worrds
-            alot of dummy worrds
-
-        </p>
-    </article>
-
-    <article>
-        <h2><a href="/posts/my-third-post">my third post</a></h2>
-        <p>
-            alot of dummy worrds
-            alot of dummy worrds
-            alot of dummy worrds
-            alot of dummy worrds
-            alot of dummy worrds
-            alot of dummy worrds
-            alot of dummy worrds
-            alot of dummy worrds
-
-        </p>
-    </article>
+    <?php endforeach; ?>
 </body>
 </html>

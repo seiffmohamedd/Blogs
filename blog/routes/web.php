@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Post;
+use Spatie\YamlFrontMatter\YamlFrontMatter;
 
+use Illuminate\Support\Facades\File;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,46 +24,46 @@ use App\Models\Post;
 
 Route::get('/',function(){
 
-    return view('posts');
-});
+    $files= File::files(resource_path("posts/"));
 
-    Route::get('/posts/{post}',function($slug){
+    $posts=[];
 
-    $path=__DIR__ . "/../resources/posts/{$slug}.html";
+    foreach($files as $file){
 
-    if( ! file_exists($path))
-    {
-        // dd("file does not exist");
-        //or use 404
-        // abort(404);
-        //or use redirect to home page
-        return redirect('/');
+    $document = YamlFrontMatter::parseFile($file);
+
+    $posts[]= new Post(
+        $document->title,
+        $document->excerpt,
+        $document->date,
+        $document->body(),
+        $document->slug
+    );
+
     }
-
-
-    $post = cache()->remember("posts.{$slug}",5 , function() use ($path){ //now()->addMinutes() we feeh addHours() bdal ma tekteb secs fel params
-        var_dump('file_get_contents');
-        return file_get_contents($path);
-    });
+    // $document = YamlFrontMatter::parseFile(resource_path('posts/my-fourth-post.html'));
 
   
-    return view('post',[
-        'post'=> $post
-]);
+    // ddd($posts);
+  
+    // $posts= Post::all();
+    return view('posts',[
+        'posts'=> $posts
+    ]);
+});
 
-       
+Route::get('/posts/{post}',function($slug){
+
+    
+    return view('post',[
+        'post'=> Post::find($slug)
+    ]);
+
 })-> where('post','[A-z_\-]+');
 
 //u can use multiple methods whereAlphaNumeric means it allows alphabetic and nums 
 
-   
-
-
-
-
-
-
-
+ 
 // return view('post' , [
 //     'post' => Post::find($slug) 
 
