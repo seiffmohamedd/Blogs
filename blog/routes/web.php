@@ -24,29 +24,8 @@ use Illuminate\Support\Facades\File;
 
 Route::get('/',function(){
 
-    $files= File::files(resource_path("posts/"));
-
-    $posts=[];
-
-    foreach($files as $file){
-
-    $document = YamlFrontMatter::parseFile($file);
-
-    $posts[]= new Post(
-        $document->title,
-        $document->excerpt,
-        $document->date,
-        $document->body(),
-        $document->slug
-    );
-
-    }
-    // $document = YamlFrontMatter::parseFile(resource_path('posts/my-fourth-post.html'));
-
-  
-    // ddd($posts);
-  
-    // $posts= Post::all();
+    $posts=Post::all();
+    
     return view('posts',[
         'posts'=> $posts
     ]);
@@ -54,12 +33,16 @@ Route::get('/',function(){
 
 Route::get('/posts/{post}',function($slug){
 
-    
+    $post = Post::find($slug);
+
+    // ddd($post);
     return view('post',[
-        'post'=> Post::find($slug)
+        'post'=> $post
     ]);
 
-})-> where('post','[A-z_\-]+');
+});
+
+// -> where('post','[A-z_\-]+');
 
 //u can use multiple methods whereAlphaNumeric means it allows alphabetic and nums 
 
