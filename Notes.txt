@@ -1,4 +1,4 @@
-create database from localhost:phpmyadmin
+pcreate database from localhost:phpmyadmin
 rename the database name from the .env file 
 then run in terminal php artisan migrate to pass the tables of migration to phpmyadmin
 if u want to change column just run php artisan migrate:rollback 
@@ -25,4 +25,25 @@ User::all(); htgelk el users kollha
 User::all()->pluck('name'); htgeblk el field dah ma5sos
 User::all()->first(); htgeblk el awl
 
+php artisan make:migration create_posts_table 
+htd5ol gowa fel migration we t3dael 3leh 
+php artisan make:model Post a3ml model b2a ll table dah 3shan y3raf yt3amel m3 el database
+php artisan tinker
+App\Models\Post::all()
+$post = new Post();
+----------------------------------------------------------------
+php artisan tinker
+$post = App\Models\Post::first();
+$post->body;
+$post->body = '<p>' . $post->body . '</p>';
+$post->save();
+----------------------------------------------------------------
+lw enta 3ayz testa5dem method tanya bt7oot dol fel Post Model
+protected $guarded=['id']; //temnaa3 el user eny y3del 3la el id 7ta lw 3ayz y7ot howa bnfso 
+protected $fillable=['title', 'excerpt', 'body']; //we deh mmkn y3adel 3lehom 3ady howa 7or
+
+bt3ml 3ady php artisan tinker 
+we b3dha Post::create(['title'=> 'My Fourth Post' ,
+'excerpt'=> 'dahelexbta3 el rabee3', 
+'body'=>'dahrabee3postdahrabee3postdahrabee3postdahrabee3postdahrabee3post']);
 
