@@ -1,0 +1,28 @@
+create database from localhost:phpmyadmin
+rename the database name from the .env file 
+then run in terminal php artisan migrate to pass the tables of migration to phpmyadmin
+if u want to change column just run php artisan migrate:rollback 
+then run again php artisan migrate
+
+*************VIIII**************
+feh comand php artisan migrate:fresh
+dah bymsa7 el tables we by create mn awl we gdeed we ew3a testa5dmo 3shan lma ymsa7 el tables hymsa7 el data el gowa kman 
+*************VIIII**************
+
+3ayz b2a temala b users
+ht run php artisan tinker
+we b3daaha $user = new App\Models\User;
+ORRR $user = new User; we howa hy3rf ygeeb el directory lw7do 
+we to3od b2a temla el fields wa7da wa7da
+$user->name = "JeffreyWay";
+$user->email = "jeffrey@gmail.com";
+$user->password = bcrypt('!password'); 3shan t3ml encryption myb2aash zaheer
+b3d ma t5ls $user->save();
+
+run da $user htgeblk el instance ely nta 3amlha we mmkn t3ml access $user->name;
+User::find(1); htgelk el user dah b kol tafaselo we t7oot bs el id el primary key y3ny mmkn testa5dem User:findOrFail(1);
+User::all(); htgelk el users kollha
+User::all()->pluck('name'); htgeblk el field dah ma5sos
+User::all()->first(); htgeblk el awl
+
+

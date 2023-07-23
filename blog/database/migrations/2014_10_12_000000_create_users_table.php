@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     /**
-     * Run the migrations.
+     * Run the migrations. this what up function does
      */
     public function up(): void
     {
@@ -23,7 +23,7 @@ return new class extends Migration
     }
 
     /**
-     * Reverse the migrations.
+     * Reverse the migrations. what down function does dah by drop el users table we by add mn foo2 el attributes el gdeda aw lw feha haga et8yrt
      */
     public function down(): void
     {
