@@ -47,3 +47,14 @@ we b3dha Post::create(['title'=> 'My Fourth Post' ,
 'excerpt'=> 'dahelexbta3 el rabee3', 
 'body'=>'dahrabee3postdahrabee3postdahrabee3postdahrabee3postdahrabee3post']);
 
+----------------------------------------------------------------
+php artisan db:seed btmla el database dummy data bs t3ml uncomment ll factory ely mawgoda fel Seeders
+DatabaseSeeder.php  
+----------------------------------------------------------------
+php artisan migrate:fresh --seed ht3ml fresh ll db we temlaha dummy fe nafs el wa2t
+
+----------------------------------------------------------------
+App\Models\User::factory(50)->create(); 7otaha b3d ma t3ml el php artisan tinker
+
+3shan b2a t3rf test5dm el dummy deh b2a 3la tool bel factory lazm t3ml factory l koll eloquent model
+php artisan make:factory PostFactory

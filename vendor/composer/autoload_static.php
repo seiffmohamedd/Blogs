@@ -17,6 +17,10 @@ class ComposerStaticInit8a4343bc014c39f97c1f277fbf2519ce
             'Symfony\\Component\\Yaml\\' => 23,
             'Spatie\\YamlFrontMatter\\' => 23,
         ),
+        'C' => 
+        array (
+            'Clockwork\\' => 10,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -31,6 +35,10 @@ class ComposerStaticInit8a4343bc014c39f97c1f277fbf2519ce
         'Spatie\\YamlFrontMatter\\' => 
         array (
             0 => __DIR__ . '/..' . '/spatie/yaml-front-matter/src',
+        ),
+        'Clockwork\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/itsgoingd/clockwork/Clockwork',
         ),
     );
 

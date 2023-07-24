@@ -1,5 +1,6 @@
 {
     "require": {
-        "spatie/yaml-front-matter": "^2.0"
+        "spatie/yaml-front-matter": "^2.0",
+        "itsgoingd/clockwork": "^5.1"
     }
 }
