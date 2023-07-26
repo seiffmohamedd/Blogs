@@ -26,7 +26,8 @@ use Illuminate\Support\Facades\File;
 
 Route::get('/',function(){
     return view('posts',[
-        'posts'=> Post::latest()->get()
+        'posts'=> Post::latest()->get(),
+        'categories'=>Category::all()
     ]);
 });
 
@@ -34,7 +35,7 @@ Route::get('/posts/{post:slug}',function(Post $post){ //post paramter should be 
 //el post:slug deh m3naha eh b2a Post::where('slug',$post)->firstOrFail(); m3naha eny hashof el match mn el passed slug l el post el mo3yn we hgeeb awel result ytla3ly
     // ddd($post);
     return view('post',[
-        'post'=> $post
+        'post'=> $post,
     ]);
 
 });
@@ -42,7 +43,9 @@ Route::get('/posts/{post:slug}',function(Post $post){ //post paramter should be 
 Route::get('categories/{category:slug}',function(Category $category){
 
     return view('posts',[
-     'posts'=> $category ->posts 
+     'posts'=> $category ->posts ,
+     'currentCategory'=>$category,
+     'categories'=>Category::all()
     ]);
 
 });
@@ -50,7 +53,9 @@ Route::get('categories/{category:slug}',function(Category $category){
 Route::get('authors/{author:username}',function(User $author){
 
     return view('posts',[
-     'posts'=> $author->posts
+     'posts'=> $author->posts,
+     'categories'=>Category::all()
+
     ]);
 
 });
