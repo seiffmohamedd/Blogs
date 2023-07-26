@@ -24,12 +24,12 @@ class DatabaseSeeder extends Seeder
         Post::truncate();
 
 
-       $user= User::factory()->create([
-            'name'=> 'John',
+       $user= User::factory(10)->create([
+            // 'name'=> 'John',
     ]);
 
-    Post::factory(5)->create([
-        'user_id'=> $user->id
+    Post::factory(10)->create([
+        // 'user_id'=> $user->id
     ]);
 
 
