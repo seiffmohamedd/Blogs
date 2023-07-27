@@ -24,8 +24,8 @@
 
                 <x-dropdown-item >All</x-dropdown-item>
                 @foreach ($categories as $category)
-                <a href="/categories/{{$category->slug}}"
-                :active ="true"
+                <a href="/?categories={{$category->slug}}"
+                :active =' request()->is("categories/{$category->slug}") '
                 class="block text-sm hover:bg-blue-400">{{$category->name}}</a>
                 @endforeach
             </x-dropdown>
