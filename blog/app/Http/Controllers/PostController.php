@@ -13,14 +13,12 @@ class PostController extends Controller
 {
     //
     
-    public function index()
-    {
+    public function index(){
     
-        return view('posts',[
-            'posts'=> Post::latest()->filter(request(['search' , 'category']))->get(),
-            'categories'=>Category::all(),
-            'currentCategory'=>Category::where('slug', request('category'))->first()
-        ]);
+    return view('posts',[
+        'posts'=> Post::latest()->filter(request(['search' , 'category']))->get(),
+        'categories'=>Category::all(),
+    ]);
 
     }
     public function show(Post $post) {
