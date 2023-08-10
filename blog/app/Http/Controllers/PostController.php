@@ -18,8 +18,9 @@ class PostController extends Controller
     
         return view('posts',[
             'posts'=> Post::latest()->filter(request(['search' , 'category']))->get(),
+            // 'posts'=> Post::latest()->filter()->get(),
             'categories'=>Category::all(),
-            'currentCategory'=>Category::where('slug', request('category'))->first()
+            // 'currentCategory'=>Category::where('slug', request('category'))->first()
         ]);
 
     }
@@ -30,4 +31,6 @@ class PostController extends Controller
         ]);
     
     }
+
+  
 }

@@ -13,28 +13,13 @@
         <!--  Category -->
         <div class="relative flex lg:inline-flex items-center bg-gray-100 rounded-xl">
 
-            <x-dropdown>
-                <x-slot name="trigger">
-                    <button class="py-2 pl-3 pr-9 text-sm font-semibold inline-flex" >
-                        {{ isset($currentCategory)? ucwords($currentCategory->name) : 'Categories'}}
-                            
-                        <x-down-arrow class="absolute pointer-events-none" style="right: 12px;" />
-                     </button>
-                </x-slot>
-
-                <x-dropdown-item >All</x-dropdown-item>
-                @foreach ($categories as $category)
-                <a href="/?categories={{$category->slug}}"
-                :active =' request()->is("categories/{$category->slug}") '
-                class="block text-sm hover:bg-blue-400">{{$category->name}}</a>
-                @endforeach
-            </x-dropdown>
+          <x-category-dropdown /> 
 
         </div>
     
 
         <!-- Other Filters -->
-        <div class="relative flex lg:inline-flex items-center bg-gray-100 rounded-xl">
+        {{-- <div class="relative flex lg:inline-flex items-center bg-gray-100 rounded-xl">
             <select class="flex-1 appearance-none bg-transparent py-2 pl-3 pr-9 text-sm font-semibold">
                 <option value="category" disabled selected>Other Filters
                 </option>
@@ -62,6 +47,6 @@
                        class="bg-transparent placeholder-black font-semibold text-sm"
                        value="{{request('search')}}" >
             </form>
-        </div>
+        </div> --}}
     </div>
 </header>
